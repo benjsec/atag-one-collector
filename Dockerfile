@@ -1,7 +1,8 @@
 FROM alpine:3.7
 
 RUN apk update && \
-    apk add python3 &&pip3 install influxdb
+    apk add python3 && \
+    pip3 install influxdb
 
 COPY collector.py /collector.py
 

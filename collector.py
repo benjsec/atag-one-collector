@@ -8,7 +8,7 @@ from urllib import request
 
 from influxdb import InfluxDBClient
 
-ATAG_ONE_IP = os.environ['ATAG_ONE_IP']
+ATAG_ONE = os.environ['ATAG_ONE']
 INTERVAL = os.environ.get('INTERVAL', 60)
 INFLUX_HOST = os.environ.get('INFLUXDB', 'influxdb')
 INFLUX_DATABASE = os.environ.get('INFLUX_DATABASE', 'atagone')
@@ -44,7 +44,7 @@ def atag_request_data():
 
     # post request
     req = request.Request(
-        "http://" + ATAG_ONE_IP + ":10000/retrieve", data=str.encode(data))
+        "http://" + ATAG_ONE + ":10000/retrieve", data=str.encode(data))
     resp_raw = request.urlopen(req, timeout=10).read()
     resp = json.loads(resp_raw)['retrieve_reply']
 
@@ -101,7 +101,6 @@ def create_influxdb_point(atag_resp):
         del point['fields']['outside_temp']
     return point
 
-time.sleep(INTERVAL)
 client = InfluxDBClient(INFLUX_HOST, database=INFLUX_DATABASE)
 
 while True:

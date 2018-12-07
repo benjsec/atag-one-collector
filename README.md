@@ -16,30 +16,42 @@ The following environment variables can be used to configure the collector.
 
 ```
 {
-	'measurement': 'atag_one',
- 	'time': 1544131195000000000,
-	'fields': {
-		'boiler_heating': False,
-        'boiler_return_temp': 61.2,
-        'boiler_temp': 64.5,
-        'burning_hours': 216.1,
+    'measurement': 'atag_one',
+    'time': 1544171517000000000,
+    'fields': {
+        'boiler_errors': '',
+        'boiler_heating': True,
+        'boiler_return_temp': 55.7,
+        'boiler_temp': 59.2,
+        'burning_hours': 218.1,
+        'ch_control_mode': 0,
         'ch_heating': False,
-        'ch_mode_temp': 14.0,
-        'ch_return_temp': 18.1,
+        'ch_mode': 2,
+        'ch_mode_temp': 17.0,
+        'ch_return_temp': 17.6,
         'ch_setpoint': 0.0,
         'ch_status': 41,
-        'ch_water_pres': 1.1,
-        'ch_water_temp': 18.1,
-        'current': 59,
+        'ch_time_to_temp': 0,
+        'ch_water_pres': 1.3,
+        'ch_water_temp': 17.6,
+        'current': 48,
+        'dbg_outside_temp': 20.4,
+        'device_errors': '',
+        'dhw_flow_rate': 0.0,
         'dhw_heating': True,
+        'dhw_mode': 1,
+        'dhw_mode_temp': 150.0,
         'dhw_status': 45,
         'dhw_temp_setp': 52.0,
-        'dhw_water_temp': 54.5,
+        'dhw_water_pres': 0.0,
+        'dhw_water_temp': 42.2,
         'max_boiler_temp': 80.0,
-        'overshoot': 0.0,
-        'power_cons': 4920,
+        'overshoot': 0.859,
+        'pcb_temp': 24.3,
+        'power_cons': 120,
         'rel_mod_level': 0,
-        'room_temp': 18.1
+        'room_temp': 17.6
     }
- }
+}
+
 ```

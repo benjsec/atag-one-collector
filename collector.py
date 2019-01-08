@@ -61,9 +61,10 @@ def create_influxdb_point(atag_resp):
     # information for me
     point = {
         'measurement': 'atag_one',
-        'time': int(int(
-            atag_time_to_datetime(r['report_time']).strftime('%s')) * 1e9),
+        'time': datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'),
         'fields': {
+            'boiler_time': int(int(
+                atag_time_to_datetime(r['report_time']).strftime('%s')) * 1e9),
             'boiler_errors': r['boiler_errors'],
             'device_errors': r['device_errors'],
             'burning_hours': r['burning_hours'],

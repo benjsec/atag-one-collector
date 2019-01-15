@@ -9,7 +9,7 @@ from urllib import request
 from influxdb import InfluxDBClient
 
 ATAG_ONE = os.environ['ATAG_ONE']
-INTERVAL = os.environ.get('INTERVAL', 60)
+INTERVAL = int(os.environ.get('INTERVAL', 60))
 INFLUX_HOST = os.environ.get('INFLUXDB', 'influxdb')
 INFLUX_DATABASE = os.environ.get('INFLUX_DATABASE', 'atagone')
 
